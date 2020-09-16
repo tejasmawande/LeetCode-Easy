@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        
+        boolean result = false;
+        int z = x;
+        int r =0;
+        int sum =0;
+            
+        while(x>0){
+         r = x%10;
+         sum = (sum*10) +r;
+           x = x/10;
+        
+        }
+        
+        if(sum == z){
+            return result = true;
+        }
+        return result;
+    }
+}
