@@ -1,6 +1,7 @@
 class Solution {
     public int reverse(int x) {
         
+        
         int rever_num = 0;
         int prev_num = 0;
         
@@ -23,6 +24,7 @@ class Solution {
            
         }  
         return negativeFlag? -rever_num:rever_num;
+        
         
         
     }
