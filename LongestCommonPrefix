@@ -1,0 +1,79 @@
+public class LongestCommonPrefix {
+
+public static void main(String[] args) {
+
+System.out.println("In Main");
+
+String[] strs = args;
+
+String str1 = args[0];
+
+String str2 = args[1];
+
+String str3 = args[2];
+
+String res = longestCommonPrefix(strs);
+
+System.out.println(res);
+
+}
+
+/**/
+
+public static String longestCommonPrefix(String[] strs){
+
+if(strs == null || strs.length < 0){
+
+return "";
+
+}
+
+int minLen = Integer.MAX_VALUE;
+
+for(String str : strs)
+
+minLen = Math.min(minLen, str.length());
+
+int low = 1;
+
+int high = minLen;
+
+while(low<= high) {
+
+int middle = (low+high)/2;
+
+if(commonPrefix(strs,middle)) {
+
+low = middle + 1;
+
+}else {
+
+high = middle - 1;
+
+}
+
+}
+
+return strs[0].substring(0, (high+low)/2);
+
+}
+
+private static boolean commonPrefix(String[] strs,int len) {
+
+String str1 = strs[0].substring(0, len);
+
+for(int i = 1 ;i <strs.length;i++) {
+
+if(!strs[i].startsWith(str1)) {
+
+return false;
+
+}
+
+}
+
+return true;
+
+}
+
+}
