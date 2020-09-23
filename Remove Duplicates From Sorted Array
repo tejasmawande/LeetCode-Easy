@@ -1,47 +1,15 @@
 class Solution {
-
-public static void main(String[] args){
-      System.out.println("In Main");
-      String numsMain = args[0];
-      String[] numsString = numsMain.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\s", "").split(",");
-      int[] numsInt = new int[numsString.length];
-      for(int i = 0; i< numsString.length;i++) {
-      numsInt[i] = Integer.parseInt(numsString[i]);
-      String res = removeDuplicates(numsInt);
-      
-      System.out.println(res);
-}
-
-}
-
 public static int removeDuplicates(int[] nums) {
+ 
 
-     int count = 0;
-
-     List<Integer> numList = new ArrayList<>();
-
-     for(Integer num1 : nums) {
-
-     numList.add(num1);
-     }
-
-     for(int i = 0 ;i <nums.length;i++) {
-
-        for(int j = i+1 ; j< nums.length ;j++) {
-
-        if(nums[i] == nums[j]) {
-
-        numList.remove(i);
-
+    int i = 0;
+    for(int elem:nums){
+        if(elem != nums[i]){
+            i++;
+          nums[i] = elem;  
+        }
+  
 }
-
-}
-
-}
-      count = numList.size();
-
-      System.out.println(numList);
-
-      return count;
+      return i+1;
 }
 }
