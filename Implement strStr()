@@ -7,18 +7,13 @@ class Solution {
 
         int j ;
 
-        for(int i = 0 ;i <=n -m ;i++) {
-
+        for(int i = 0 ;i <=n - m ;i++) {
             for( j = 0 ; j< m;j++)
-
             if(haystack.charAt(i+j) != needle.charAt(j))
-
-                break;
+                    break;
 
                 if(j == m)
-
                 return i;
-
 }
 
 return -1;
