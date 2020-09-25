@@ -1,7 +1,5 @@
 class Solution {
 public static int removeDuplicates(int[] nums) {
- 
-
     int i = 0;
     for(int elem:nums){
         if(elem != nums[i]){
