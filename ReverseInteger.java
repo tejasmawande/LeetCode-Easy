@@ -4,6 +4,8 @@ class Solution {
         int rever_num = 0;
         int prev_num = 0;
         
+        
+        
         boolean negativeFlag = false;
         if( x<0 ){
             negativeFlag = true;
