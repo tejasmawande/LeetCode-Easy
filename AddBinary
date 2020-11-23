@@ -1,0 +1,49 @@
+class Solution {
+   
+public static void main(String[] args) {
+
+System.out.println("In Main");
+
+String str1 = args[0];
+
+String str2 = args[1];
+
+String res = addBinary(str1,str2);
+
+System.out.println(res);
+
+}
+
+public static String addBinary(String str1, String str2) {
+
+String result = "";
+
+int i = str1.length()-1;
+
+int j = str2.length()-1;
+
+int sum = 0;
+
+while(i >=0 ||j>=0 || sum==1)
+
+{
+
+sum+= ((i>=0)?str1.charAt(i) - '0':0);
+
+sum+= ((j>=0)?str2.charAt(j) - '0':0);
+
+result = (char)(sum % 2 + '0') + result;
+
+sum = sum/2;
+
+i--;
+
+j--;
+
+}
+
+return result;
+
+}
+
+}
