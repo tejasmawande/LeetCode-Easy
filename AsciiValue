@@ -1,0 +1,64 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class AsciiValue {
+
+ 
+ public static void main(String[] args) {
+  
+  System.out.println("IN Main");
+  
+  String val = args[0];
+  
+    String[] res = val.split(",");
+    
+    String firstString = res[0];
+    String secondString = res[1];
+    
+    /*int str1 = Integer.parseInt(res[0]);
+    int str2 = Integer.parseInt(res[1]);*/
+    
+    System.out.println(firstString);
+    System.out.println(secondString);
+    int str1Length = firstString.length();
+    int str2Length = secondString.length();
+    
+    int mainResult =0;
+    int firstStringResult = 0;
+    int secondStringResult = 0;
+    firstStringResult = asciiStringValue(firstString, str1Length);
+    secondStringResult =asciiStringValue(secondString, str2Length);
+    
+    mainResult = firstStringResult - secondStringResult;
+    System.out.println("MainResult"+mainResult);
+ }
+
+ private static int asciiStringValue(String stringVal, int strLength) {
+
+  int result = 0;
+  int result1 = 0;
+  int result2 = 0;
+  
+  for(int i =0 ;i<strLength/2;i++) {
+
+   char c = stringVal.charAt(i);
+   int j = Character.getNumericValue(c);
+   result1 = j + result1;
+   
+  }
+  for(int k =strLength -1; k>=strLength/2;k--) {
+   
+   char c = stringVal.charAt(k);
+   int ascii =c;
+   System.out.println(ascii);
+   result2 = ascii + result2;
+  }
+  System.out.println(result1);
+  System.out.println(result2);
+  
+  result = result1 + result2;
+  System.out.println(result);
+  
+  return result;
+ }
+}
