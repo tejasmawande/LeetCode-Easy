@@ -1,0 +1,23 @@
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		
+		int inp = 5;
+		int mainResult;
+		mainResult = factorialProgram(inp);
+	
+		System.out.println("mainResult-->"+mainResult);
+		
+	}
+
+	public static int factorialProgram(int inp){
+	int result=1;
+    for(int i = 1;i<=inp;i++){
+
+        result = result* i;
+        
+    }
+	return result;
+	}
+}
