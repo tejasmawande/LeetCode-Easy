@@ -1,21 +1,30 @@
-class Solution {
-    public List<String> generateParenthesis(int n) {
-        List<String> ans = new ArrayList<>();
-        
-        if(n==0){
-            ans.add("");
-        }       
-        else{
-            for(int i =0; i <n ;i++){
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	
+    int n =2;
+    List<String> resultList = new ArrayList<>();
+    resultList = generateParenthesis(n);
+    System.out.println("resultList"+resultList);
 
-                for(String left : generateParenthesis(i)){
-                    for(String right: generateParenthesis(n-1-i)){
-                    ans.add("(" +left+ ")"+right);
+}
+
+    public static List<String>  generateParenthesis(int n){
+        
+        List<String> list = new ArrayList<>();
+        
+        if( n ==0){
+            list.add("");
+        }
+        for(int i=0; i < n; i++){
+            for(String left : generateParenthesis(i)){
+                for(String right : generateParenthesis(n -1 -i)){
+                    list.add("("+left+")"+right);
                 }
             }
+            
         }
-              
+        return list;
     }
-      return ans;
-}
 }
