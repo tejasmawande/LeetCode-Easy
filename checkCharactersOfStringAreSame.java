@@ -30,6 +30,8 @@ public class checkCharactersOfStringAreSame {
 			if(characters.indexOf(c) < 0) return false;
 		}
 		
+		
+		
 		return true;
 	}
 }
