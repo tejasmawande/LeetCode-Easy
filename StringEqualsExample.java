@@ -23,11 +23,11 @@ public class StringEqualsExample {
 			System.out.println("true"); // true - we can compare two String literals with == operator
 		}
 		
-		if(a.equals(d)) {
-			System.out.println("true"); //false - we cannot compare String Literal with String Object with equals method
+		if(a.equals(e)) {
+			System.out.println("true"); //true - we can compare String Literal with String Object with equals method
 		}
 		
-		if(a == d) {
+		if(a == e) {
 			System.out.println("true");// false - we cannot compare String Literal with String  object with == operator
 		}
 	}
